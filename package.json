@@ -1,0 +1,55 @@
+{
+  "name": "@reonarudo/smiles-renderer",
+  "version": "0.1.0",
+  "description": "Render SMILES molecules and SMARTS patterns to safe, inline-ready SVG in Node",
+  "keywords": [
+    "smiles",
+    "smarts",
+    "chemistry",
+    "molecule",
+    "svg",
+    "markdown",
+    "openchemlib"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reonarudo/smiles-renderer.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "licenses",
+    "THIRD_PARTY_NOTICES.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "compile": "rm -rf dist && tsc -p tsconfig.build.json",
+    "test": "node --import tsx --test test/*.test.ts",
+    "test:packed": "node scripts/test-packed.mjs"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "0.9.12",
+    "openchemlib": "9.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.3",
+    "tsx": "4.23.13",
+    "typescript": "7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": false
+  }
+}
