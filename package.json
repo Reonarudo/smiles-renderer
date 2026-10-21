@@ -1,6 +1,6 @@
 {
   "name": "@reonarudo/smiles-renderer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Render SMILES molecules and SMARTS patterns to safe, inline-ready SVG in Node",
   "keywords": [
     "smiles",
