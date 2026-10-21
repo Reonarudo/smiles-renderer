@@ -7,11 +7,11 @@ patterns to safe, inline-ready SVG in Node, at build time, with
 share the [render contract](http://192.168.188.68:3001/projects/markdown-renderers/wiki/Render_contract).
 
 ```sh
-npm install github:Reonarudo/smiles-renderer#v0.1.0
+npm install https://github.com/Reonarudo/smiles-renderer/releases/download/v1.0.0/reonarudo-smiles-renderer-1.0.0.tgz
 ```
 
-On npm 12 or later, a project installing git dependencies also needs `allow-git=root` in its
-`.npmrc`. Nothing runs on install: `dist/` is committed, and OpenChemLib comes from the npm
+On npm 12 or later, the installing project also needs `allow-remote=root` in its `.npmrc`.
+Nothing runs on install: `dist/` is committed, and OpenChemLib comes from the npm
 registry.
 
 ## Use
@@ -130,7 +130,14 @@ npm ci
 npm run compile        # tsc → dist/, which is committed; CI fails if it is stale
 npm run lint
 npm test               # tests import dist/, so compile first
+UPDATE_GOLDEN=1 npm test  # re-record test/golden/ after a deliberate output change
 npm run test:packed    # npm pack, install into a temp project, render one fence
 ```
 
 Requires Node 22 or later (`.nvmrc` pins the version used in development).
+
+## Releasing
+
+Versions, golden SVG tests and the release procedure follow
+[Releasing](http://192.168.188.68:3001/projects/markdown-renderers/wiki/Releasing).
+What each version changed is in [CHANGELOG.md](CHANGELOG.md).

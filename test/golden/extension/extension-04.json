@@ -1,0 +1,6 @@
+{
+  "status": "failure",
+  "message": "dangling ring closure: 1",
+  "line": 1,
+  "column": 5
+}
